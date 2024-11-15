@@ -5,6 +5,8 @@ import { GeneratorForm } from "@/components/generator-form";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Code2 } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted">
@@ -35,9 +37,8 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground text-lg max-w-2xl mx-auto"
           >
-            Create production-ready project templates with your favorite tech stack.
-            Choose from a wide range of frameworks, languages, and tools to kickstart
-            your development.
+            Create production-ready project templates with your favorite tech stack. Choose from a
+            wide range of frameworks, languages, and tools to kickstart your development.
           </motion.p>
         </div>
 

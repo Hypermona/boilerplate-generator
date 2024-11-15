@@ -15,7 +15,7 @@ interface Technology {
 interface TechStackSelectorProps {
   title: string;
   technologies: Technology[];
-  selected: string;
+  selected: string[];
   onSelect: (id: string) => void;
 }
 
@@ -36,7 +36,7 @@ export function TechStackSelector({
             key={tech.id}
             className={cn(
               "cursor-pointer transition-all duration-200 hover:scale-105",
-              selected === tech.id && "border-primary",
+              selected.includes(tech.id) && "border-primary",
               hoveredId === tech.id && "shadow-lg"
             )}
             onClick={() => onSelect(tech.id)}
@@ -45,12 +45,7 @@ export function TechStackSelector({
           >
             <CardContent className="p-4 text-center space-y-3">
               <div className="relative w-12 h-12 mx-auto">
-                <Image
-                  src={tech.icon}
-                  alt={tech.name}
-                  fill
-                  className="object-contain"
-                />
+                <Image src={tech.icon} alt={tech.name} fill className="object-contain" />
               </div>
               <h3 className="font-medium">{tech.name}</h3>
               <p className="text-sm text-muted-foreground">{tech.description}</p>
